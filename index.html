@@ -105,8 +105,7 @@
         <ol>
           <li>Pick your channel's <span class="ui-ref">Channel Theme</span> and <span class="ui-ref">Platform</span>.</li>
           <li>Choose a <span class="ui-ref">Tone</span> and a <span class="ui-ref">Narrator / Host</span> type.</li>
-          <li>For <span class="ui-ref">Character Name &amp; Short Bio</span>, <span class="ui-ref">Signature Motif</span>, and <span class="ui-ref">Catchphrase</span>: no need to write your own — use the small <span class="ui-ref">Pick an idea</span> dropdown right above each field to fill it with a ready-made line. You can leave it as-is, or change a word or two to make it more yours.</li>
-          <li>Fill in <span class="ui-ref">Target Viewer</span> and, if you want, the <span class="ui-ref">Avoid / Off-Limits</span> list — these are about your own audience, so there's no picker for them.</li>
+          <li>No need to write any of the remaining fields yourself — <span class="ui-ref">Character Name &amp; Short Bio</span>, <span class="ui-ref">Signature Motif</span>, <span class="ui-ref">Catchphrase</span>, <span class="ui-ref">Target Viewer</span>, and <span class="ui-ref">Avoid / Off-Limits</span> each have a small <span class="ui-ref">Pick an idea</span> dropdown right above them. Pick one to fill the field with a ready-made line, then leave it as-is or change a word or two to make it more yours.</li>
           <li>Press <span class="ui-ref">Generate Brief</span>. Your Channel Brain Brief appears on the right.</li>
           <li>Press <span class="ui-ref">Copy</span> to paste the brief straight into MagicFlixAI's Brand Voice Training step, or press <span class="ui-ref">Save</span> to keep it.</li>
         </ol>
@@ -177,11 +176,13 @@
         </div>
         <div class="field">
           <label for="pbAudience">Target Viewer</label>
-          <input type="text" id="pbAudience" placeholder="e.g. people who binge “what if” history videos on their commute" />
+          <select id="pbAudienceIdea" class="idea-picker" aria-label="Pick a target viewer idea"></select>
+          <textarea id="pbAudience" rows="3" placeholder="e.g. people who binge “what if” history videos on their commute"></textarea>
         </div>
         <div class="field">
           <label for="pbAvoid">Avoid / Off-Limits <span class="optional">(optional)</span></label>
-          <textarea id="pbAvoid" rows="2" placeholder="topics, jokes, or styles this channel should never use"></textarea>
+          <select id="pbAvoidIdea" class="idea-picker" aria-label="Pick an avoid-list idea"></select>
+          <textarea id="pbAvoid" rows="3" placeholder="topics, jokes, or styles this channel should never use"></textarea>
         </div>
         <button class="primary-btn" id="pbGenerate" type="button">Generate Brief</button>
       </div>

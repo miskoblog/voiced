@@ -32,6 +32,18 @@ const THEMES = {
       "Ends on an unresolved choice, framed as a question to the viewer",
       "A signature sound cue (a specific breath, heartbeat, or radio-static sting) at moments of tension",
     ],
+    audiences: [
+      "people who binge “what if” survival videos late at night",
+      "commuters watching short immersive clips on their phone",
+      "viewers who want to feel like they're inside the scene, not watching it",
+      "fans of disaster and survival content who want tension, not gore",
+    ],
+    avoids: [
+      "no real tragedy re-enactments, no graphic gore",
+      "no jump-scares just for shock value",
+      "no political or religious framing of the scenario",
+      "no mocking real victims or real events",
+    ],
   },
   trivia: {
     label: "Trivia / Brainteasers",
@@ -53,6 +65,18 @@ const THEMES = {
       "A recurring “one more thing” bonus fact tacked onto the end",
       "The same opening question format every video (“Quick — before you scroll—”)",
     ],
+    audiences: [
+      "people who play trivia apps on their commute",
+      "viewers who like being challenged, not just told facts",
+      "casual quiz fans who watch in short bursts between tasks",
+      "people who share “did you know” facts with friends",
+    ],
+    avoids: [
+      "no made-up or unverifiable facts",
+      "no condescending tone toward viewers who get it wrong",
+      "no political or religious trivia",
+      "no recycled facts everyone's already seen",
+    ],
   },
   history: {
     label: "History Recreation",
@@ -73,6 +97,18 @@ const THEMES = {
       "Consistent visual treatment marking “recreation” vs. “known fact” moments",
       "Closes by connecting the historical event to something present-day",
     ],
+    audiences: [
+      "people who binge “what really happened” history videos on break",
+      "viewers who liked history class but wanted more drama",
+      "fans of documentaries who don't have time for a full documentary",
+      "people curious about the story behind a famous date or place",
+    ],
+    avoids: [
+      "no glorifying violence or atrocities",
+      "no unverified conspiracy claims presented as fact",
+      "no modern political commentary layered onto historical events",
+      "no mocking historical figures or cultures",
+    ],
   },
   asmr: {
     label: "Unreal ASMR",
@@ -91,6 +127,18 @@ const THEMES = {
       "Videos built around one continuous, unbroken action, with no cuts in the “process”",
       "A consistent visual world (same unreal setting or palette) videos keep returning to",
       "No spoken sign-off — every video just fades, never a verbal “see you next time”",
+    ],
+    audiences: [
+      "insomniacs who watch right before bed",
+      "people who use background videos to focus or relax",
+      "viewers who want calm, not excitement",
+      "fans of oddly satisfying process videos",
+    ],
+    avoids: [
+      "no sudden loud sounds or jump cuts",
+      "no talking over the ambient sound",
+      "no fast cuts or jarring transitions",
+      "no upbeat music breaking the calm",
     ],
   },
   story: {
@@ -111,6 +159,18 @@ const THEMES = {
       "A specific narrative tic — always ends on a question, a twist, or a moral",
       "A distinct pacing signature (e.g. a slow build with one hard cut to the climax)",
     ],
+    audiences: [
+      "people who listen to stories before bed",
+      "viewers who want a complete story in one sitting, not a series",
+      "fans of anthology shows who watch in short bursts",
+      "parents looking for safe story content to watch with their kids",
+    ],
+    avoids: [
+      "no unresolved cliffhangers with no payoff",
+      "no content inappropriate for the stated audience",
+      "no gore or graphic violence",
+      "no borrowing copyrighted characters or plots",
+    ],
   },
   education: {
     label: "Education / Affiliate",
@@ -129,6 +189,18 @@ const THEMES = {
       "A recurring “here's what I'd actually do” opinion beat, kept separate from the neutral explanation",
       "Consistent visual chapter markers so a viewer always knows where they are",
       "Closes with one specific, single next action — never a vague “let me know what you think”",
+    ],
+    audiences: [
+      "people who want the short version before buying something",
+      "viewers comparing options before making a decision",
+      "beginners who feel overwhelmed by other explanations",
+      "people who follow creators for honest, no-fluff reviews",
+    ],
+    avoids: [
+      "no unverified claims about results or earnings",
+      "no recommending something the creator hasn't actually used",
+      "no burying the honest downsides",
+      "no clickbait titles that oversell the content",
     ],
   },
   localBiz: {
@@ -149,6 +221,18 @@ const THEMES = {
       "A recurring visual signature tied to the business's actual branding, not a generic template look",
       "A series structure that rotates through the same few angles (staff, product, customer, story) per business",
     ],
+    audiences: [
+      "local residents who scroll social media before choosing where to go",
+      "people searching for a specific service in their area",
+      "past customers who might come back if reminded",
+      "people who trust a real local face over a generic ad",
+    ],
+    avoids: [
+      "no generic stock-footage feel — it should look like this specific business",
+      "no overselling claims the business can't back up",
+      "no ignoring the business's actual branding and tone",
+      "no treating every business the same way",
+    ],
   },
   custom: {
     label: "Something Else / Custom",
@@ -160,6 +244,12 @@ const THEMES = {
     ],
     motifs: [
       "The strongest motif for a custom concept usually comes straight from what makes your premise different from anything on this list.",
+    ],
+    audiences: [
+      "Name a specific kind of person, not just “people interested in [topic]” — the more specific, the more useful this is.",
+    ],
+    avoids: [
+      "Name what this specific concept should never do — generic “keep it appropriate” guidance won't differentiate you.",
     ],
   },
 };
@@ -513,6 +603,8 @@ const IDEA_PICKERS = [
   { selectId: "pbCharacterIdea", fieldId: "pbCharacter", themeKey: "archetypes" },
   { selectId: "pbMotifIdea", fieldId: "pbMotif", themeKey: "motifs" },
   { selectId: "pbCatchphraseIdea", fieldId: "pbCatchphrase", themeKey: "catchphrases" },
+  { selectId: "pbAudienceIdea", fieldId: "pbAudience", themeKey: "audiences" },
+  { selectId: "pbAvoidIdea", fieldId: "pbAvoid", themeKey: "avoids" },
 ];
 
 function refreshIdeaPickers() {
