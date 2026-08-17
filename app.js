@@ -506,6 +506,49 @@ function autoName(persona) {
   return `${theme} persona`;
 }
 
+// Idea pickers: lets a buyer fill Character Bio / Signature Motif / Catchphrase by
+// choosing a ready-made line instead of writing one from scratch — reuses the exact
+// same per-theme content as the Voice & Motif Bank, just surfaced right on the field.
+const IDEA_PICKERS = [
+  { selectId: "pbCharacterIdea", fieldId: "pbCharacter", themeKey: "archetypes" },
+  { selectId: "pbMotifIdea", fieldId: "pbMotif", themeKey: "motifs" },
+  { selectId: "pbCatchphraseIdea", fieldId: "pbCatchphrase", themeKey: "catchphrases" },
+];
+
+function refreshIdeaPickers() {
+  const theme = THEMES[document.getElementById("pbTheme").value] || THEMES.custom;
+  IDEA_PICKERS.forEach(({ selectId, themeKey }) => {
+    const select = document.getElementById(selectId);
+    select.innerHTML = "";
+    const placeholder = document.createElement("option");
+    placeholder.value = "";
+    placeholder.textContent = "Pick an idea (optional)";
+    select.appendChild(placeholder);
+    theme[themeKey].forEach((text) => {
+      const opt = document.createElement("option");
+      opt.value = text;
+      opt.textContent = text;
+      select.appendChild(opt);
+    });
+  });
+}
+
+function initIdeaPickers(onPick) {
+  IDEA_PICKERS.forEach(({ selectId, fieldId }) => {
+    const select = document.getElementById(selectId);
+    const field = document.getElementById(fieldId);
+    select.addEventListener("change", () => {
+      if (!select.value) return;
+      field.value = select.value;
+      field.dispatchEvent(new Event("input", { bubbles: true }));
+      select.value = ""; // reset to placeholder so the same idea can be picked again later
+      onPick();
+    });
+  });
+  document.getElementById("pbTheme").addEventListener("change", refreshIdeaPickers);
+  refreshIdeaPickers();
+}
+
 function initPersonaBuilder() {
   const fieldIds = { theme: "pbTheme", platform: "pbPlatform", tone: "pbTone", host: "pbHost", character: "pbCharacter", motif: "pbMotif", catchphrase: "pbCatchphrase", audience: "pbAudience", avoid: "pbAvoid" };
 
@@ -523,6 +566,8 @@ function initPersonaBuilder() {
     el.addEventListener("input", autosave);
     el.addEventListener("change", autosave);
   });
+
+  initIdeaPickers(autosave);
 
   function generate() {
     const persona = readPersonaForm();
@@ -557,6 +602,7 @@ function initPersonaBuilder() {
     },
     applyEntry: (persona) => {
       writePersonaForm(persona);
+      refreshIdeaPickers(); // theme may have changed — keep the pickers' options in sync
       autosave();
       generate();
     },

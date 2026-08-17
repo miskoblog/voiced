@@ -105,14 +105,15 @@
         <ol>
           <li>Pick your channel's <span class="ui-ref">Channel Theme</span> and <span class="ui-ref">Platform</span>.</li>
           <li>Choose a <span class="ui-ref">Tone</span> and a <span class="ui-ref">Narrator / Host</span> type.</li>
-          <li>Fill in the specifics that make this channel yours — <span class="ui-ref">Signature Motif</span>, <span class="ui-ref">Catchphrase</span>, <span class="ui-ref">Target Viewer</span>, and anything on the <span class="ui-ref">Avoid / Off-Limits</span> list.</li>
+          <li>For <span class="ui-ref">Character Name &amp; Short Bio</span>, <span class="ui-ref">Signature Motif</span>, and <span class="ui-ref">Catchphrase</span>: no need to write your own — use the small <span class="ui-ref">Pick an idea</span> dropdown right above each field to fill it with a ready-made line. You can leave it as-is, or change a word or two to make it more yours.</li>
+          <li>Fill in <span class="ui-ref">Target Viewer</span> and, if you want, the <span class="ui-ref">Avoid / Off-Limits</span> list — these are about your own audience, so there's no picker for them.</li>
           <li>Press <span class="ui-ref">Generate Brief</span>. Your Channel Brain Brief appears on the right.</li>
           <li>Press <span class="ui-ref">Copy</span> to paste the brief straight into MagicFlixAI's Brand Voice Training step, or press <span class="ui-ref">Save</span> to keep it.</li>
         </ol>
       </div>
       <div class="guide-section">
-        <h2><span class="guide-number">2</span>Borrow ideas from the Voice &amp; Motif Bank</h2>
-        <p>Open the <span class="ui-ref">Voice &amp; Motif Bank</span> tab, pick your theme, and browse catchphrase patterns, narrator archetypes, and recurring motifs for inspiration — then bring your own version of one into the Persona Builder fields. These are starting points, not a script to copy verbatim.</p>
+        <h2><span class="guide-number">2</span>Browse more ideas in the Voice &amp; Motif Bank</h2>
+        <p>Want more options than the dropdowns show? Open the <span class="ui-ref">Voice &amp; Motif Bank</span> tab to browse every catchphrase, narrator archetype, and motif for your theme in one place — the same ideas, just easier to scan side by side.</p>
       </div>
       <div class="guide-section">
         <h2><span class="guide-number">3</span>Check your Differentiation Score</h2>
@@ -161,14 +162,17 @@
         </div>
         <div class="field">
           <label for="pbCharacter">Character Name &amp; Short Bio <span class="optional">(if using a persona)</span></label>
+          <select id="pbCharacterIdea" class="idea-picker" aria-label="Pick a character idea"></select>
           <input type="text" id="pbCharacter" placeholder="e.g. “Mara,” a war-weary survivor guiding you through each what-if scenario" />
         </div>
         <div class="field">
           <label for="pbMotif">Signature Motif</label>
+          <select id="pbMotifIdea" class="idea-picker" aria-label="Pick a motif idea"></select>
           <input type="text" id="pbMotif" placeholder="e.g. always ends on an unresolved question to camera" />
         </div>
         <div class="field">
           <label for="pbCatchphrase">Catchphrase <span class="optional">(optional)</span></label>
+          <select id="pbCatchphraseIdea" class="idea-picker" aria-label="Pick a catchphrase idea"></select>
           <input type="text" id="pbCatchphrase" placeholder="e.g. “One choice. No do-overs.”" />
         </div>
         <div class="field">
