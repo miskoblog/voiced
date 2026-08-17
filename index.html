@@ -76,9 +76,9 @@
   <nav class="tabs" role="tablist" aria-label="Toolkit sections">
     <button class="tab-btn is-active" data-tab="guide" role="tab" aria-selected="true">How to Use</button>
     <button class="tab-btn" data-tab="builder" role="tab" aria-selected="false">Persona Builder</button>
+    <button class="tab-btn" data-tab="bank" role="tab" aria-selected="false">Voice &amp; Motif Bank</button>
     <button class="tab-btn" data-tab="score" role="tab" aria-selected="false">Differentiation Score</button>
     <button class="tab-btn" data-tab="saved" role="tab" aria-selected="false">Saved Personas</button>
-    <button class="tab-btn" data-tab="bank" role="tab" aria-selected="false">Voice &amp; Motif Bank</button>
   </nav>
   <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch between light and dark theme" title="Switch theme">
     <svg id="themeIconSun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
@@ -111,16 +111,16 @@
         </ol>
       </div>
       <div class="guide-section">
-        <h2><span class="guide-number">2</span>Check your Differentiation Score</h2>
+        <h2><span class="guide-number">2</span>Borrow ideas from the Voice &amp; Motif Bank</h2>
+        <p>Open the <span class="ui-ref">Voice &amp; Motif Bank</span> tab, pick your theme, and browse catchphrase patterns, narrator archetypes, and recurring motifs for inspiration — then bring your own version of one into the Persona Builder fields. These are starting points, not a script to copy verbatim.</p>
+      </div>
+      <div class="guide-section">
+        <h2><span class="guide-number">3</span>Check your Differentiation Score</h2>
         <p>Every time you press <span class="ui-ref">Generate Brief</span>, open the <span class="ui-ref">Differentiation Score</span> tab to see a 0–100 score for how generic vs. differentiated the current persona is, plus specific flags on which fields are still too vague.</p>
       </div>
       <div class="guide-section">
-        <h2><span class="guide-number">3</span>Reopen a Saved Persona</h2>
+        <h2><span class="guide-number">4</span>Reopen a Saved Persona</h2>
         <p>Open the <span class="ui-ref">Saved Personas</span> tab to see everything you've saved. Press <span class="ui-ref">Open</span> on any entry to reload its exact inputs back into the Persona Builder so you can tweak and regenerate, or <span class="ui-ref">Delete</span> ones you no longer need.</p>
-      </div>
-      <div class="guide-section">
-        <h2><span class="guide-number">4</span>Borrow ideas from the Voice &amp; Motif Bank</h2>
-        <p>Open the <span class="ui-ref">Voice &amp; Motif Bank</span> tab, pick your theme, and browse catchphrase patterns, narrator archetypes, and recurring motifs for inspiration — then bring your own version of one into the Persona Builder fields. These are starting points, not a script to copy verbatim.</p>
       </div>
       <div class="guide-section guide-note">
         <h2><span class="guide-number">–</span>One thing to know</h2>
@@ -198,6 +198,19 @@
     </div>
   </section>
 
+  <!-- ===================== VOICE & MOTIF BANK ===================== -->
+  <section class="panel" id="panel-bank">
+    <div class="panel-head">
+      <h1>Voice &amp; Motif Bank</h1>
+      <p>Reference material, organized by theme — concrete building blocks to spark your own version, not a script to copy as-is.</p>
+    </div>
+    <div class="field bank-filter">
+      <label for="bankTheme">Theme</label>
+      <select id="bankTheme"></select>
+    </div>
+    <div class="bank-grid" id="bankGrid"></div>
+  </section>
+
   <!-- ===================== DIFFERENTIATION SCORE ===================== -->
   <section class="panel" id="panel-score">
     <div class="panel-head">
@@ -226,19 +239,6 @@
         <div class="saved-list" id="pbSavedList"></div>
       </div>
     </div>
-  </section>
-
-  <!-- ===================== VOICE & MOTIF BANK ===================== -->
-  <section class="panel" id="panel-bank">
-    <div class="panel-head">
-      <h1>Voice &amp; Motif Bank</h1>
-      <p>Reference material, organized by theme — concrete building blocks to spark your own version, not a script to copy as-is.</p>
-    </div>
-    <div class="field bank-filter">
-      <label for="bankTheme">Theme</label>
-      <select id="bankTheme"></select>
-    </div>
-    <div class="bank-grid" id="bankGrid"></div>
   </section>
 
 </main>
