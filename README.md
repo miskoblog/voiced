@@ -11,12 +11,12 @@ before you sit down to generate your first video.
 - **Persona Builder** — a structured questionnaire (theme, platform, tone,
   narrator/host, signature motif, catchphrase, target viewer, avoid list) that
   compiles a "Channel Brain Brief" ready to paste into MagicFlixAI 2.0's Brand
-  Voice Training step.
+  Voice Training step. Each of the five open-ended fields has a "Pick an idea"
+  dropdown above it — a ready-made, theme-specific line you can use as-is or
+  edit, so nobody has to write original English prose to use the tool.
 - **Differentiation Score** — a weighted score (0–100) that rates how generic
   vs. differentiated the current persona is, and flags which fields are still
   too vague.
-- **Voice & Motif Bank** — reference catchphrase patterns, narrator archetypes,
-  and recurring motifs, organized by channel theme, for inspiration.
 - **Saved Personas** — every finished brief is saved so you can build a
   distinct persona per channel and reopen/tweak any of them later.
 

@@ -7,8 +7,8 @@
 const GATE_HASH = "dfb6548b2de68cdf5556ffa61190a24bc3f3a15758799a5e72348dba63abd536";
 
 // ---------------------------------------------------------------------------
-// Reference data — themes, tones, host types. Shared by the Persona Builder,
-// the Differentiation Score, and the Voice & Motif Bank.
+// Reference data — themes, tones, host types. Shared by the Persona Builder's
+// fields, its idea pickers, and the Differentiation Score.
 // ---------------------------------------------------------------------------
 
 const THEMES = {
@@ -282,7 +282,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initTabs();
   populateSelects();
   initPersonaBuilder();
-  initBank();
 });
 
 // ---------------------------------------------------------------------------
@@ -385,7 +384,6 @@ function populateSelects() {
   document.getElementById("pbTheme").innerHTML = optionsHtml(THEME_ORDER, THEMES);
   document.getElementById("pbTone").innerHTML = optionsHtml(TONE_ORDER, TONES);
   document.getElementById("pbHost").innerHTML = optionsHtml(HOST_ORDER, HOSTS);
-  document.getElementById("bankTheme").innerHTML = optionsHtml(THEME_ORDER, THEMES);
 }
 
 // ---------------------------------------------------------------------------
@@ -596,9 +594,9 @@ function autoName(persona) {
   return `${theme} persona`;
 }
 
-// Idea pickers: lets a buyer fill Character Bio / Signature Motif / Catchphrase by
-// choosing a ready-made line instead of writing one from scratch — reuses the exact
-// same per-theme content as the Voice & Motif Bank, just surfaced right on the field.
+// Idea pickers: lets a buyer fill any of the five persona fields by choosing a
+// ready-made line instead of writing one from scratch — one dropdown per field,
+// each pulling from the matching per-theme array in THEMES above.
 const IDEA_PICKERS = [
   { selectId: "pbCharacterIdea", fieldId: "pbCharacter", themeKey: "archetypes" },
   { selectId: "pbMotifIdea", fieldId: "pbMotif", themeKey: "motifs" },
@@ -707,28 +705,4 @@ function initPersonaBuilder() {
     const last = JSON.parse(localStorage.getItem(PB_AUTOSAVE_KEY));
     if (last && (last.motif || last.audience || last.catchphrase)) generate();
   } catch { /* ignore */ }
-}
-
-// ---------------------------------------------------------------------------
-// Voice & Motif Bank
-// ---------------------------------------------------------------------------
-
-function renderBank(themeKey) {
-  const theme = THEMES[themeKey] || THEMES.custom;
-  const grid = document.getElementById("bankGrid");
-  const section = (title, items) => `
-    <div class="bank-card">
-      <h3>${escapeHtml(title)}</h3>
-      <ul>${items.map((i) => `<li>${escapeHtml(i)}</li>`).join("")}</ul>
-    </div>`;
-  grid.innerHTML =
-    section("Catchphrase Patterns", theme.catchphrases) +
-    section("Narrator Archetypes", theme.archetypes) +
-    section("Recurring Motifs", theme.motifs);
-}
-
-function initBank() {
-  const select = document.getElementById("bankTheme");
-  select.addEventListener("change", () => renderBank(select.value));
-  renderBank(select.value);
 }

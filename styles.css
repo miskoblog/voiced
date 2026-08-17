@@ -227,18 +227,6 @@ button { font-family: inherit; }
 .saved-actions { display: flex; gap: 8px; flex-shrink: 0; }
 .saved-empty { font-size: 13.5px; color: var(--ink-soft); margin: 0; }
 
-/* ---------- Voice & Motif Bank ---------- */
-.bank-filter { max-width: 340px; margin-bottom: 22px; }
-.bank-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-@media (max-width: 800px) { .bank-grid { grid-template-columns: 1fr; } }
-.bank-card {
-  background: var(--bg-raised); border: 1px solid var(--line); border-radius: var(--radius);
-  box-shadow: var(--shadow); padding: 18px 20px;
-}
-.bank-card h3 { font-size: 14px; margin: 0 0 12px; color: var(--accent); }
-.bank-card ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 9px; }
-.bank-card li { font-size: 13.5px; line-height: 1.5; }
-
 /* ---------- guide ---------- */
 .guide { display: flex; flex-direction: column; gap: 22px; max-width: 720px; }
 .guide-section {
