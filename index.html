@@ -76,6 +76,8 @@
   <nav class="tabs" role="tablist" aria-label="Toolkit sections">
     <button class="tab-btn is-active" data-tab="guide" role="tab" aria-selected="true">How to Use</button>
     <button class="tab-btn" data-tab="builder" role="tab" aria-selected="false">Persona Builder</button>
+    <button class="tab-btn" data-tab="score" role="tab" aria-selected="false">Differentiation Score</button>
+    <button class="tab-btn" data-tab="saved" role="tab" aria-selected="false">Saved Personas</button>
     <button class="tab-btn" data-tab="bank" role="tab" aria-selected="false">Voice &amp; Motif Bank</button>
   </nav>
   <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch between light and dark theme" title="Switch theme">
@@ -104,13 +106,20 @@
           <li>Pick your channel's <span class="ui-ref">Channel Theme</span> and <span class="ui-ref">Platform</span>.</li>
           <li>Choose a <span class="ui-ref">Tone</span> and a <span class="ui-ref">Narrator / Host</span> type.</li>
           <li>Fill in the specifics that make this channel yours — <span class="ui-ref">Signature Motif</span>, <span class="ui-ref">Catchphrase</span>, <span class="ui-ref">Target Viewer</span>, and anything on the <span class="ui-ref">Avoid / Off-Limits</span> list.</li>
-          <li>Press <span class="ui-ref">Generate Brief</span>. Your Channel Brain Brief appears on the right, along with a live <span class="ui-ref">Differentiation Score</span> that flags which fields are still too generic.</li>
-          <li>Press <span class="ui-ref">Copy</span> to paste the brief straight into MagicFlixAI's Brand Voice Training step, or press <span class="ui-ref">Save</span> to keep it in your <span class="ui-ref">Saved Personas</span> list below.</li>
-          <li>Building another channel? Come back anytime, open a saved persona with <span class="ui-ref">Open</span> to reload its exact inputs, tweak, and regenerate — or <span class="ui-ref">Delete</span> ones you no longer need.</li>
+          <li>Press <span class="ui-ref">Generate Brief</span>. Your Channel Brain Brief appears on the right.</li>
+          <li>Press <span class="ui-ref">Copy</span> to paste the brief straight into MagicFlixAI's Brand Voice Training step, or press <span class="ui-ref">Save</span> to keep it.</li>
         </ol>
       </div>
       <div class="guide-section">
-        <h2><span class="guide-number">2</span>Borrow ideas from the Voice &amp; Motif Bank</h2>
+        <h2><span class="guide-number">2</span>Check your Differentiation Score</h2>
+        <p>Every time you press <span class="ui-ref">Generate Brief</span>, open the <span class="ui-ref">Differentiation Score</span> tab to see a 0–100 score for how generic vs. differentiated the current persona is, plus specific flags on which fields are still too vague.</p>
+      </div>
+      <div class="guide-section">
+        <h2><span class="guide-number">3</span>Reopen a Saved Persona</h2>
+        <p>Open the <span class="ui-ref">Saved Personas</span> tab to see everything you've saved. Press <span class="ui-ref">Open</span> on any entry to reload its exact inputs back into the Persona Builder so you can tweak and regenerate, or <span class="ui-ref">Delete</span> ones you no longer need.</p>
+      </div>
+      <div class="guide-section">
+        <h2><span class="guide-number">4</span>Borrow ideas from the Voice &amp; Motif Bank</h2>
         <p>Open the <span class="ui-ref">Voice &amp; Motif Bank</span> tab, pick your theme, and browse catchphrase patterns, narrator archetypes, and recurring motifs for inspiration — then bring your own version of one into the Persona Builder fields. These are starting points, not a script to copy verbatim.</p>
       </div>
       <div class="guide-section guide-note">
@@ -184,20 +193,38 @@
           </div>
           <div id="pbOutput"><p class="output-placeholder">Fill in the fields on the left, then press Generate Brief.</p></div>
         </div>
-
-        <div class="output-card score-card">
-          <div class="output-head">
-            <span class="output-label">Differentiation Score</span>
-          </div>
-          <div id="pbScore"><p class="output-placeholder">Your score appears here once you generate a brief.</p></div>
-        </div>
-
-        <div class="output-card saved-card">
-          <div class="output-head"><span class="output-label">Saved Personas</span></div>
-          <div class="saved-list" id="pbSavedList"></div>
-        </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- ===================== DIFFERENTIATION SCORE ===================== -->
+  <section class="panel" id="panel-score">
+    <div class="panel-head">
+      <h1>Differentiation Score</h1>
+      <p>How generic vs. differentiated the current persona is, scored 0–100 from the fields you've filled in on the Persona Builder tab. Updates every time you press Generate Brief there.</p>
+    </div>
+    <div class="panel-narrow">
+      <div class="output-card score-card">
+        <div class="output-head">
+          <span class="output-label">Differentiation Score</span>
+        </div>
+        <div id="pbScore"><p class="output-placeholder">Your score appears here once you generate a brief on the Persona Builder tab.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SAVED PERSONAS ===================== -->
+  <section class="panel" id="panel-saved">
+    <div class="panel-head">
+      <h1>Saved Personas</h1>
+      <p>Every brief you've saved from the Persona Builder tab. Open one to reload its exact inputs and regenerate, or delete ones you no longer need.</p>
+    </div>
+    <div class="panel-narrow">
+      <div class="output-card saved-card">
+        <div class="output-head"><span class="output-label">Saved Personas</span></div>
+        <div class="saved-list" id="pbSavedList"></div>
+      </div>
     </div>
   </section>
 
